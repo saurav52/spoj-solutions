@@ -1,11 +1,14 @@
 #include<bits/stdc++.h>
 using namespace std;
 int main()
-{int t,a,b,l,m;
+{int t,a,l;
+  long long b;
+  char c[1001];
     cin>>t;
     for(int z=1;z<=t;z++)
     {
-        cin>>a>>b;
+        cin>>c>>b;
+        a=(int)(c[strlen(c)-1]-'0');
         if(a==0)
         {
             cout<<"0"<<endl;
