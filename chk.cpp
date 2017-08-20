@@ -1,34 +1,17 @@
-#include<bits/stdc++.h>
-using namespace std;
+#include <boost/multiprecision/cpp_int.hpp>
+#include <iostream>
+namespace mp = boost::multiprecision;
+
 int main()
 {
-    int n;
-    stack<int>s;
-    int a[2000];
-    cin>>n;
+    int n,d;
+    std::cin>>n>>d;
     while(n!=0)
     {
-        for(int i=0;i<n;i++)
-            cin>>a[i];
-        int k=1;
-        for(int i=0;i<n;i++)
-        {
-            if(a[i]!=k)
-                s.push(a[i]);
-            else
-                ++k;
-            while(!s.empty() && s.top()==k)
-            {
-                s.pop();
-                ++k;
-            }
-        }
-        if(s.empty())
-            cout<<"yes"<<endl;
-        else
-            cout<<"no"<<endl;
-        while(!s.empty())
-            s.pop();
-        cin>>n;
+        mp::cpp_int u = 1;
+        for(unsigned i = 1; i <=d; ++i)
+            u *= n;
+        std::cout << u<< '\n';
+        std::cin>>n>>d;
     }
 }
